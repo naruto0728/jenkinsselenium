@@ -1,6 +1,7 @@
 package com.hogwarts.base;
 
 import org.apache.log4j.Logger;
+import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
@@ -84,7 +85,7 @@ public abstract class WebUIBase {
     private Properties loadFromEnvProperties(String propFileName) {
         Properties prop = null;
 
-        String path = System.getProperty("user.home");
+        String path = System.getProperty("user.dir");
 
         //读入envProperties属性文件
         try {
@@ -120,5 +121,10 @@ public abstract class WebUIBase {
         } catch (InterruptedException e) {
 
         }
+    }
+
+    @Test
+    public void fun(){
+        System.out.println(System.getProperty("user.dir"));
     }
 }
